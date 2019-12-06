@@ -3,11 +3,10 @@ FROM webdevops/php-apache
 # Install dependencies
 
 # Install app
-RUN rm -rf /var/www/html/* && mkdir -p /var/www/html
-ADD src /var/www/html
+ADD src /application/code
 
 # Configure apache
-RUN chown -R apache:apache /var/www
+RUN chown -R apache:apache /application/code
 ENV APACHE_RUN_USER apache
 ENV APACHE_RUN_GROUP apache
 ENV APACHE_LOG_DIR /var/log/apache2
