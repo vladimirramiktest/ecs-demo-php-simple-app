@@ -1,11 +1,6 @@
-FROM amazonlinux:2
+FROM webdevops/php-apache
 
 # Install dependencies
-RUN yum install -y \
-    curl \
-    httpd \
-    php \
- && ln -s /usr/sbin/httpd /usr/sbin/apache2
 
 # Install app
 RUN rm -rf /var/www/html/* && mkdir -p /var/www/html
